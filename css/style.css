@@ -57,12 +57,20 @@ table{
 /* POLÍTICA DE COOKIES
 ----------------------------------------------- */
 :root{
---color-fondo-aviso: #fff;                /* Color de fondo del aviso de cookies */
---color-del-parrafo: #000;                /* Color del texto del aviso de cookies */
---tamano-parrafo: 16px;                     /* Tamaño de fuente del texto del aviso de cookies */
---color-boton-aceptar: #f57c00;          /* Color de fondo del botón "Acepto" en el aviso de cookies */
---color-texto-boton-aceptar: #fff;       /* Color del texto del botón "Acepto" en el aviso de cookies */
---color-texto-leer-mas: #f57c00;         /* Color del texto del enlace "Leer más" en el aviso de cookies */
+    --color-fondo-aviso:                    #FFFFFF;               /* Color de fondo del aviso de cookies */
+    --color-del-parrafo:                    #000000;               /* Color del texto del aviso de cookies */
+    --tamano-parrafo:                       16px;                    /* Tamaño de fuente del texto del aviso de cookies */
+    --color-boton-aceptar:                  #F57C00;               /* Color de fondo del botón "Acepto" en el aviso de cookies */
+    --color-texto-boton-aceptar:            #FFFFFF;               /* Color del texto del botón "Acepto" en el aviso de cookies */
+    --color-texto-leer-mas:                 #F57C00;               /* Color del texto del enlace "Leer más" en el aviso de cookies */
+
+    /* Textos */
+    --tamano-texto-post-titulo:             clamp(1rem, 0.7917rem + 0.6944vw, 1.625rem);            /* 480x1920 16-26 */
+    --tamano-texto-post-h2:                  clamp(1rem, 0.9167rem + 0.2778vw, 1.25rem);             /* 480x1920 16-20 */
+    --tamano-texto-post-normal:             clamp(0.875rem, 0.7917rem + 0.2778vw, 1.125rem);        /* 480x1920 14-18 */
+
+    --color-texto-subtitle:                 #FFFFFF;
+    --color-texto-post:                     #BEC9D3;
 }
 .cookie-container{position:fixed;bottom:-100%;left:0;right:0;z-index:999999999999999;transition:400ms;background:var(--color-fondo-aviso);padding:15px;box-shadow:1px 7px 14px -5px rgba(0,0,0,.15);text-align:center;font-size:var(--tamano-parrafo)}
 .cookie-content{color:var(--color-del-parrafo)}
@@ -367,21 +375,33 @@ a:hover{
     margin: 2rem;
     text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
     font-family: 'Courier New', Courier, monospace;
-    font-size: clamp(1rem, 0.7917rem + 0.6944vw, 1.625rem);
+    font-size: var(--tamano-texto-post-titulo);
     font-weight: bold;
     color: #77bbcc;
 }
 
 .post-content{
     font-family: 'Catamaran';
-    font-size: clamp(0.875rem, 0.7917rem + 0.2778vw, 1.125rem);
+    font-size: var(--tamano-texto-post-normal);
     word-spacing: 0.20em;
     letter-spacing: 0.07em;
     text-align: justify;
     line-height: 1.5em;
-    color: #bec9d3;
+    color: var(--color-texto-post);
     margin: 2rem;
     padding: 10px;
+}
+
+.post-content-h2{
+    margin: 20px 0 10px 0;
+    font-size: var(--tamano-texto-post-h2);
+    color: var(--color-texto-subtitle);
+    font-weight: bold;
+}
+
+.post-image{
+    margin: 10px 0 10px 0;
+    text-align: center;
 }
 
 .post-content img{
@@ -390,15 +410,20 @@ a:hover{
     margin: 10px;
     max-width: 100%;
     height: auto;
-    padding: 5px;
+    padding: 2px;
 }
 
 .post-content ul{
+    margin: 10px 0 10px 0;
     list-style-type: disc;
     padding-left: 30px;
     padding-right: 30px;
-    line-height: 2.5rem;
+    line-height: 2rem;
     text-align: left;
+}
+
+.post-content-ul-title{
+    color: var(--color-texto-subtitle)
 }
 
 .post-videocontainer{
